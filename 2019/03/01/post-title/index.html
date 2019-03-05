@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="主题使用nexthexo官方文档">
+<meta name="description" content="主要用hexo快速搭建，主题使用next再加上一些简单的格式化设置修改，只要你了解一点markdown语法，都能快速的写文章，hexo搭建博客网上很多教程，这里就不过多描述了hexo官方文档">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Hexo快速搭建个人网站">
 <meta property="og:url" content="http://qiuyong.top/2019/03/01/post-title/index.html">
 <meta property="og:site_name" content="Ask_Chiu">
-<meta property="og:description" content="主题使用nexthexo官方文档">
+<meta property="og:description" content="主要用hexo快速搭建，主题使用next再加上一些简单的格式化设置修改，只要你了解一点markdown语法，都能快速的写文章，hexo搭建博客网上很多教程，这里就不过多描述了hexo官方文档">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-03T15:05:11.361Z">
+<meta property="og:updated_time" content="2019-03-04T12:55:22.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Hexo快速搭建个人网站">
-<meta name="twitter:description" content="主题使用nexthexo官方文档">
+<meta name="twitter:description" content="主要用hexo快速搭建，主题使用next再加上一些简单的格式化设置修改，只要你了解一点markdown语法，都能快速的写文章，hexo搭建博客网上很多教程，这里就不过多描述了hexo官方文档">
 
 
 
@@ -191,16 +191,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
@@ -211,12 +201,32 @@
         </li>
       
         
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
           </a>
         </li>
       
@@ -318,6 +328,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/01/post-title/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/01/post-title/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -347,7 +367,7 @@
       
 
       
-        <h5 id="主题使用next"><a href="#主题使用next" class="headerlink" title="主题使用next"></a>主题使用next</h5><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo官方文档</a></p>
+        <p>主要用hexo快速搭建，主题使用next再加上一些简单的格式化设置修改，只要你了解一点markdown语法，都能快速的写文章，hexo搭建博客网上很多教程，这里就不过多描述了<br><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo官方文档</a></p>
 
       
     </div>
@@ -365,7 +385,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/hexo/" <i class="fa fa-tag"> hexo</a>
           
         </div>
       
@@ -387,6 +407,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/04/cnode/" rel="prev" title="vue仿写cnode社区">
+                vue仿写cnode社区 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -416,6 +440,9 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -438,17 +465,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -465,7 +483,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -486,10 +504,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">1</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -532,22 +550,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#主题使用next"><span class="nav-number">1.</span> <span class="nav-text">主题使用next</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -745,6 +747,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'O2jYUawJEO0BCixVSqjdoUay-gzGzoHsz',
+        appKey: 'LTEdXnrK3ngRx2MgVF5O2vrE',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

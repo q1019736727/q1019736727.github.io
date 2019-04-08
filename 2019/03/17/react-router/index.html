@@ -17,19 +17,21 @@
   <meta http-equiv="window-target" content="_top">
   
   
-  <title>hello world | Ask_Chiu</title>
-  <meta property="og:type" content="article">
-<meta property="og:title" content="hello world">
-<meta property="og:url" content="http://qiuyong.top/2019/02/27/hello-world/index.html">
+  <title>React.js之react-router | Ask_Chiu</title>
+  <meta name="description" content="前言&amp;emsp;当我刚刚开始接触react的时候，路由的跳转到底该使用react-router还是使用react-router-dom,这个是让我们很懵逼的，下面就先来说说react-router和react-router-dom的关系以及区别">
+<meta name="keywords" content="React,react-router,react-router-dom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React.js之react-router">
+<meta property="og:url" content="http://qiuyong.top/2019/03/17/react-router/index.html">
 <meta property="og:site_name" content="Ask_Chiu">
+<meta property="og:description" content="前言&amp;emsp;当我刚刚开始接触react的时候，路由的跳转到底该使用react-router还是使用react-router-dom,这个是让我们很懵逼的，下面就先来说说react-router和react-router-dom的关系以及区别">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://qiuyong.top/2019/02/27/hello-world/SwiftJs.png">
-<meta property="og:updated_time" content="2019-03-02T15:34:24.764Z">
+<meta property="og:updated_time" content="2019-04-08T13:20:18.750Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello world">
-<meta name="twitter:image" content="http://qiuyong.top/2019/02/27/hello-world/SwiftJs.png">
+<meta name="twitter:title" content="React.js之react-router">
+<meta name="twitter:description" content="前言&amp;emsp;当我刚刚开始接触react的时候，路由的跳转到底该使用react-router还是使用react-router-dom,这个是让我们很懵逼的，下面就先来说说react-router和react-router-dom的关系以及区别">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://qiuyong.top/2019/02/27/hello-world/index.html">
+  <link rel="canonical" href="http://qiuyong.top/2019/03/17/react-router/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Ask_Chiu" type="application/atom+xml">
   
@@ -278,14 +280,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-hello-world" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post·-react-router" class="article article-type-post·" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      hello world
+      React.js之react-router
     </h1>
   
 
@@ -293,12 +295,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2019/02/27/hello-world/" class="article-date">
-	  <time datetime="2019-02-27T03:36:51.000Z" itemprop="datePublished">2019-02-27</time>
+	<a href="/2019/03/17/react-router/" class="article-date">
+	  <time datetime="2019-03-17T13:50:23.000Z" itemprop="datePublished">2019-03-17</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/React/">React</a>, <a class="article-tag-link" href="/tags/react-router/">react-router</a>, <a class="article-tag-link" href="/tags/react-router-dom/">react-router-dom</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -309,13 +321,38 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/02/27/hello-world/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/03/17/react-router/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><img src="/2019/02/27/hello-world/SwiftJs.png" alt></p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&emsp;当我刚刚开始接触react的时候，路由的跳转到底该使用react-router还是使用react-router-dom,这个是让我们很懵逼的，下面就先来说说react-router和react-router-dom的关系以及区别<br><a id="more"></a></p>
+<h4 id="一-api的区别"><a href="#一-api的区别" class="headerlink" title="(一)api的区别"></a>(一)api的区别</h4><ul>
+<li>react-router提供了router的核心api，如Router、Route、Switch等等，但是并没有提供相关dom操作的api</li>
+<li>react-router-dom提供了通过dom触发的时间路由，例如BrowserRouter、Route、Link等</li>
+</ul>
+<h4 id="二-功能的差异性"><a href="#二-功能的差异性" class="headerlink" title="(二)功能的差异性"></a>(二)功能的差异性</h4><ul>
+<li>react-router-dom是基于react-router实现的，并且加入了一些浏览器运行的一些功能，<br>  例如：Link组件会渲染一个a标签，BrowserRouter使用 HTML5 提供的 history API可以保证你的 UI 界面和 URL 保持同步，HashRouter使用 URL 的 hash 部分保证你的 UI 界面和 URL 保持同步</li>
+</ul>
+<p>所以综上所说因素，一般我们只要引入react-router-dom即可,react-router-dom会自动引入依赖库react-router,在<a href="mailto:react-router@v4.0" target="_blank" rel="noopener">react-router@v4.0</a>版本以后，React Router被拆分成三个包：react-router,react-router-dom和react-router-native，目前网站搭建只需要引入react-router-dom即可，更多用法可以查看<a href="https://reacttraining.com/react-router/web/guides/quick-start" target="_blank" rel="noopener">官网</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add react-router-dom</span><br><span class="line"><span class="comment">//或则</span></span><br><span class="line">npm install react-router-dom</span><br></pre></td></tr></table></figure></p>
+<h3 id="react-router-dom"><a href="#react-router-dom" class="headerlink" title="react-router-dom"></a>react-router-dom</h3><h4 id="（一-BrowserRouter与HashRouter"><a href="#（一-BrowserRouter与HashRouter" class="headerlink" title="（一) BrowserRouter与HashRouter"></a>（一) BrowserRouter与HashRouter</h4><p>&emsp;HashRouter与BrowserRouter这两个路由是基本，我们需要将他们包裹在最外层，当然他们的内层也只能包裹一个元素，例如这样<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;BrowserRouter <span class="keyword">as</span> Router, HashRouter, Route&#125; <span class="keyword">from</span> <span class="string">"react-router-dom"</span>;</span><br><span class="line"></span><br><span class="line">    &lt;HashRouter&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;Route exact path=<span class="string">'/'</span> component=&#123;Login&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">        &lt;Route path=<span class="string">'/home'</span> component=&#123;Home&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">     &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>HashRouter&gt;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//或则使用BrowserRouter这样</span></span><br><span class="line">    </span><br><span class="line">    &lt;Router&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;Route exact path=<span class="string">'/'</span> component=&#123;Login&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">        &lt;Route path=<span class="string">'/home'</span> component=&#123;Home&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>Router&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在这里我们要说说HashRouter和BrowserRouter的区别</p>
+<ul>
+<li>BrowserRouter使用HTML5历史记录API（pushState，replaceState和popstate事件）来保持您的UI与URL同步</li>
+<li>HashRouter使用URL的哈希部分（即window.location.hash）来保持您的UI与URL同步，使得路径上会出现<span style="color:red"> # </span>键</li>
+</ul>
+<h4 id="二-Route"><a href="#二-Route" class="headerlink" title="(二) Route"></a>(二) Route</h4><p>Route 就像原材料，控制着我们应该对应显示的内容，也是最重要的路由组件<br>Route常用的属性，path、exact、component</p>
+<ul>
+<li>path：对应的路径</li>
+<li>exact：仅当路径与location.pathname完全匹配时才匹配，当匹配到路劲后就不会再往下匹配</li>
+<li>component：对应要显示的组件<figure class="highlight javascript"><figcaption><span>app.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;BrowserRouter <span class="keyword">as</span> Router, HashRouter, Route&#125; <span class="keyword">from</span> <span class="string">"react-router-dom"</span>;</span><br><span class="line">    &lt;HashRouter&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        <span class="comment">/*一般这里都要加个exact，不然切换路径后，两个路径对应的组件都会被显示出来*/</span></span><br><span class="line">        &lt;Route exact path=<span class="string">'/'</span> component=&#123;Login&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">        &lt;Route path=<span class="string">'/home'</span> component=&#123;Home&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>HashRouter&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="三-Link与NavLink"><a href="#三-Link与NavLink" class="headerlink" title="(三) Link与NavLink"></a>(三) Link与NavLink</h4><p>&emsp;Link与NavLink都是控制路由跳转的，当然NavLink所具有的功能比Link更多，所以，使用的时候视情况而定。控制路由跳转这只是其中的一种方法，我们也可以使用react-router里面的js方法实现跳转<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<font color="red" size="4" face="黑体"> <strong>先暂时写在这儿，等有时间再接着完善</strong></font>
+
+
 
       
     </div>
@@ -325,7 +362,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://qiuyong.top/2019/02/27/hello-world/" title="hello world" target="_blank" rel="external">http://qiuyong.top/2019/02/27/hello-world/</a>
+      <a href="http://qiuyong.top/2019/03/17/react-router/" title="React.js之react-router" target="_blank" rel="external">http://qiuyong.top/2019/03/17/react-router/</a>
     </li>
     
     <!--<li class="post-copyright-license">-->
@@ -371,10 +408,10 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2019/03/04/cnode/" title="vue仿写cnode社区"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
     
+    <li class="next">
+      <a href="/2019/03/11/vuex/" title="谈谈vuex"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
     
   </ul>

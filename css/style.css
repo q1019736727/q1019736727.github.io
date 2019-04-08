@@ -5914,7 +5914,9 @@ body.no-sidebar .sidebar {
 }
 
 .main .article-list article {
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #eeeeee;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .main .article-list article:last-child {

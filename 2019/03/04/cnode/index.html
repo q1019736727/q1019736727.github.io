@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Ask_Js" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;写的一个vue小项目,接口基于cnode社区开放接口,项目使用Vue2.0实现,写了一段时间了总结一下项目，该项目未适配手机屏幕。  源码地址 | 预览地址 项目主体结构  &amp;emsp;因为项目较小,就没有使用vuex,网络方面使用axios。">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue仿写cnode社区">
+<meta property="og:url" content="http://q1019736727.github.io/2019/03/04/cnode/index.html">
+<meta property="og:site_name" content="Ask_Js">
+<meta property="og:description" content="&amp;emsp;写的一个vue小项目,接口基于cnode社区开放接口,项目使用Vue2.0实现,写了一段时间了总结一下项目，该项目未适配手机屏幕。  源码地址 | 预览地址 项目主体结构  &amp;emsp;因为项目较小,就没有使用vuex,网络方面使用axios。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://q1019736727.github.io/2019/03/04/cnode/list.jpg">
+<meta property="og:image" content="http://q1019736727.github.io/2019/03/04/cnode/page.gif">
+<meta property="og:updated_time" content="2023-10-11T02:16:44.126Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue仿写cnode社区">
+<meta name="twitter:description" content="&amp;emsp;写的一个vue小项目,接口基于cnode社区开放接口,项目使用Vue2.0实现,写了一段时间了总结一下项目，该项目未适配手机屏幕。  源码地址 | 预览地址 项目主体结构  &amp;emsp;因为项目较小,就没有使用vuex,网络方面使用axios。">
+<meta name="twitter:image" content="http://q1019736727.github.io/2019/03/04/cnode/list.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"fadeIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://q1019736727.github.io/2019/03/04/cnode/">
+
+
+
+
+
+  <title>vue仿写cnode社区 | Ask_Js</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ask_Js</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://q1019736727.github.io/2019/03/04/cnode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ask_Js">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16474216?s=220&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ask_Js">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue仿写cnode社区</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-04T09:41:42+08:00">
+                2019-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/04/cnode/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/04/cnode/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>  &emsp;写的一个vue小项目,接口基于cnode社区<a href="https://cnodejs.org/api" target="_blank" rel="noopener">开放接口</a>,项目使用Vue2.0实现,写了一段时间了总结一下项目，该项目未适配手机屏幕。<br>  <a href="https://github.com/q1019736727/node-Vue" target="_blank" rel="noopener">源码地址</a> | <a href="http://q1019736727.github.io/node-Vue/node-vue/dist">预览地址</a></p>
+<h4 id="项目主体结构"><a href="#项目主体结构" class="headerlink" title="项目主体结构"></a>项目主体结构</h4><p>  &emsp;因为项目较小,就没有使用vuex,网络方面使用axios。<img src="/2019/03/04/cnode/list.jpg" alt></p>
+   <a id="more"></a>
+<h4 id="axios挂载"><a href="#axios挂载" class="headerlink" title="axios挂载"></a>axios挂载</h4><p>  &emsp;一般当我们网络请求时，都需要一个网络框架，这里我选择axios。每当一个组件需要网络请求时，都需要引入axios模块，为了避免这种重复操作，可以把axios挂载到Vue的原型上</p>
+<p>  &emsp;入口文件main.js<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*这里可以随便命名,为了方便记住,我命名$http*/</span></span><br><span class="line">Vue.prototype.$http = Axios</span><br></pre></td></tr></table></figure></p>
+<p>   &emsp;需要使用的组件调用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$http.get(<span class="string">'...'</span>,&#123;</span><br><span class="line">          params: &#123;</span><br><span class="line">            ...params</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">           <span class="comment">// ... do something</span></span><br><span class="line">        &#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span>&#123;</span><br><span class="line">           <span class="comment">// ... do something</span></span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="路由配置"><a href="#路由配置" class="headerlink" title="路由配置"></a>路由配置</h4><p>  &emsp;总共5个组件模块，顶部导航栏、主页列表、详情即评论区域、个人详情、分页器<br>  详情页的数据信息因为返回的html数据形式，这里引入了一个第三方mardown文本样式<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> url(<span class="string">'../assets/markdown.css'</span>);<span class="comment">//引入markdown样式</span></span><br></pre></td></tr></table></figure></p>
+<p>   &emsp;vue-router路由配置信息<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Router(&#123;</span><br><span class="line">  <span class="comment">// 如果需要去掉路径上的#，model使用history模式</span></span><br><span class="line">  <span class="comment">// mode:'history',</span></span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      name:<span class="string">'root'</span>,<span class="comment">//router-link跳转时需要使用</span></span><br><span class="line">      path:<span class="string">'/'</span>,</span><br><span class="line">      components:&#123;</span><br><span class="line">        main: Publish<span class="comment">//这里和下面命名main是因为渲染的时候(router-view 时需要用)</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name:<span class="string">'post-detail'</span>,</span><br><span class="line">      path:<span class="string">'/topic/:id&amp;:name'</span>,<span class="comment">//需要传递参数id和name,注意在</span></span><br><span class="line">      components:&#123;</span><br><span class="line">        main: Postdetail,</span><br><span class="line">        slider: Slider</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name:<span class="string">'user-page'</span>,</span><br><span class="line">      path:<span class="string">'/user/:username'</span>,</span><br><span class="line">      components:&#123;</span><br><span class="line">        main:Userinfo</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="分页器的实现"><a href="#分页器的实现" class="headerlink" title="分页器的实现"></a>分页器的实现</h4><p>   &emsp;在主页的底部，我们需要一个分页器。首先我们要理清需求，做一个最多显示5页的分页器，当大于5页的时候，前面显示省略号，页数也都加1，当页数小于5时，前面的省略号消失。</p>
+<p>   &emsp;大体效果如下<br>   <img src="/2019/03/04/cnode/page.gif" alt></p>
+<p>   &emsp;首先我们构建一个分页容器,其中<strong>ismore</strong>用于判断是否显示前边的省略号，<strong>selectIndex</strong>用于判断当前选中页数<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page-wrapper"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"changeBtn"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"changeBtn"</span>&gt;</span>上一页<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-show</span>=<span class="string">"ismore"</span>&gt;</span>......<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"changeBtn(item)"</span> <span class="attr">v-for</span>=<span class="string">"item in Pages"</span> <span class="attr">:class</span>=<span class="string">"&#123;active: selectIndex === item&#125;"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"changeBtn"</span>&gt;</span>下一页<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>   &emsp;初始数据值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">    Pages:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="string">'......'</span>],<span class="comment">//初始页数</span></span><br><span class="line">    selectIndex:<span class="number">1</span>,<span class="comment">//初始选中状态</span></span><br><span class="line">    ismore:<span class="literal">false</span><span class="comment">//是否显示前面的......</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>  &emsp; 按钮点击逻辑处理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">changeBtn(page)&#123;</span><br><span class="line">       <span class="comment">//过滤点击省略号事件</span></span><br><span class="line">       <span class="keyword">if</span> (<span class="keyword">typeof</span> page !== <span class="string">'number'</span>) &#123;</span><br><span class="line">         <span class="keyword">if</span> (<span class="keyword">typeof</span> page === <span class="string">'string'</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span></span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">let</span> str = page.currentTarget.innerText</span><br><span class="line">         <span class="keyword">switch</span> (str) &#123;</span><br><span class="line">           <span class="keyword">case</span> <span class="string">'首页'</span>:</span><br><span class="line">             <span class="keyword">this</span>.Pages = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="string">'......'</span>];</span><br><span class="line">             <span class="keyword">this</span>.changeBtn(<span class="number">1</span>);</span><br><span class="line">             <span class="keyword">break</span></span><br><span class="line">           <span class="keyword">case</span> <span class="string">'上一页'</span>:</span><br><span class="line">             <span class="keyword">this</span>.$jq(<span class="string">'button.active'</span>).prev().click()</span><br><span class="line">             <span class="keyword">break</span></span><br><span class="line">           <span class="keyword">case</span> <span class="string">'下一页'</span>:</span><br><span class="line">             <span class="keyword">this</span>.$jq(<span class="string">'button.active'</span>).next().click()</span><br><span class="line">             <span class="keyword">break</span></span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span></span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">this</span>.selectIndex = page;</span><br><span class="line">       <span class="keyword">if</span>(page&gt;<span class="number">4</span>)&#123;<span class="comment">//判断是否显示省略号</span></span><br><span class="line">         <span class="keyword">this</span>.ismore = <span class="literal">true</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         <span class="keyword">this</span>.ismore = <span class="literal">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//页码状态处理</span></span><br><span class="line">       <span class="keyword">if</span>(page == <span class="keyword">this</span>.Pages[<span class="number">4</span>] )&#123;</span><br><span class="line">         <span class="keyword">this</span>.Pages.shift();</span><br><span class="line">         <span class="keyword">this</span>.Pages.splice(<span class="number">4</span>,<span class="number">0</span>,<span class="keyword">this</span>.Pages[<span class="number">3</span>]+<span class="number">1</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span> <span class="keyword">if</span>(page == <span class="keyword">this</span>.Pages[<span class="number">0</span>] &amp;&amp; page !=<span class="number">1</span>)&#123;</span><br><span class="line">         <span class="keyword">this</span>.Pages.unshift(<span class="keyword">this</span>.Pages[<span class="number">0</span>]<span class="number">-1</span>);</span><br><span class="line">         <span class="keyword">this</span>.Pages.splice(<span class="number">5</span>,<span class="number">1</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//通知主页按钮已经点击，实时更新数据</span></span><br><span class="line">       <span class="keyword">this</span>.$emit(<span class="string">'changePage'</span>,page)</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>   &emsp;总的说来，这是一个非常适合练手的项目，逻辑简单明了，页面逻辑也不是很复杂，可能其中还有些没讲到，不过可以下载源码在细致看一下，上面这些是我大致认为该项目还比较重要的内容，以此做个记录</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" <i class="fa fa-tag"> vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/27/hello-world/" rel="next" title="hello world">
+                <i class="fa fa-chevron-left"></i> hello world
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/06/eventshub/" rel="prev" title="写一个简单的事件订阅中心eventsHub">
+                写一个简单的事件订阅中心eventsHub <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            关于
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars3.githubusercontent.com/u/16474216?s=220&v=4" alt="Ask_Js">
+            
+              <p class="site-author-name" itemprop="name">Ask_Js</p>
+              <p class="site-description motion-element" itemprop="description">learn more</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/q1019736727" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:q1019736727@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#项目主体结构"><span class="nav-number">1.</span> <span class="nav-text">项目主体结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#axios挂载"><span class="nav-number">2.</span> <span class="nav-text">axios挂载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由配置"><span class="nav-number">3.</span> <span class="nav-text">路由配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分页器的实现"><span class="nav-number">4.</span> <span class="nav-text">分页器的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"> ask_js</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      浏览量
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: false,
+        appId: 'O2jYUawJEO0BCixVSqjdoUay-gzGzoHsz',
+        appKey: 'LTEdXnrK3ngRx2MgVF5O2vrE',
+        placeholder: '说点什么吧!',
+        avatar:'retro',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
